@@ -1,0 +1,95 @@
+/* Importa a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap');
+
+/* Inicio estilo header */
+
+/* Remove a margem e o padding padrão do body e de listas não ordenadas (ul) */
+body, ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estiliza os links dentro do menu (#menu a) */
+#menu a {
+    color: black; /* Define a cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-family: "Abel", sans-serif; /* Aplica a fonte Abel */
+    font-weight: 400; /* Peso da fonte */
+    font-style: normal; /* Estilo da fonte */
+    transition: 0.3s; /* Adiciona transição suave ao hover */
+    text-align: center; /* Centraliza o texto */
+    padding: 0 0.4em; /* Espaçamento horizontal interno */
+    font-size: 16px; /* Tamanho do texto */
+    border-bottom-left-radius: 15px; /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 15px; /* Arredonda o canto inferior direito */
+    border-bottom: 4px solid #cccc; /* Define a borda inferior */
+    box-shadow: 2px 2px 4px #969696; /* Sombra ao redor do link */
+}
+
+/* Estiliza o hover (passar o mouse por cima) dos links do menu */
+#menu a:hover{
+    font-size: 22px; /* Aumenta o tamanho do texto ao passar o mouse */
+    border-bottom-left-radius: 15px; /*Arredondar canto abaixo e esquerda */
+    border-bottom-right-radius: 15px; /*Arredondar canto abaixo e direito */
+    border-bottom: 0.1px solid #00000000; /* Remove a borda inferior ao passar o mouse */
+}
+
+/* Estiliza o logo */
+#logo img{
+    height: 70px; /* Altura da imagem do logo */
+    width: 70px; /* Largura da imagem do logo */
+}
+
+/* Estiliza o hover do logo */
+#logo img:hover{
+    box-shadow: 2px 2px 4px #cbcbcb; /* Sombra ao redor da imagem ao passar o mouse */
+    transition: 0.3s; /* Transição suave ao aplicar hover */
+}
+
+/* Estiliza o header */
+#header{
+    box-sizing: border-box; /* Garante que padding e border são incluídos na largura e altura totais */
+    height: 90px; /* Altura do header */
+    padding: 1rem; /* Padding interno do header */
+    display: flex; /* Exibe o conteúdo do header como flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* Distribui o conteúdo com espaçamento entre os elementos */
+    background: #e7e7e7; /* Cor de fundo do header */
+    box-shadow: 3px 3px 6px #b1b1b1; /* Sombra ao redor do header */
+    top: 0px;
+    
+}
+
+/* Estiliza o menu de navegação */
+#menu{
+    display: flex; /* Exibe o menu como flexbox */
+    list-style: none; /* Remove os marcadores de lista */
+    gap: 0.8rem; /* Define o espaçamento entre os itens do menu */
+    /* rem - unidade de medida relativa que varia de acordo com a dimensão do navegador */
+    z-index: 1000;
+}
+
+/* Esconde o botão móvel por padrão */
+#btn-mobile{
+    display: none;
+}
+
+#carouselExampleInterval {
+    width: 500px;
+    height: auto; 
+    display: flex;
+    position: relative;
+    z-index: 100; /* garante que o carrousel esteja acima de outros elementos utilizando um número menor que o nosso #menu ficará atrás do menu   */
+    margin: 30px 0px 0px 30px;
+}
+
+.carousel-item {
+    max-height: 100%;
+    width: 50%;
+}
+
+.countainer {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

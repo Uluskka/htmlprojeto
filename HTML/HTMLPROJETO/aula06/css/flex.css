@@ -1,0 +1,24 @@
+body {
+    margin-left: 10px;
+}
+
+.box{
+    display: flex;
+    flex-direction: row; /* Eixo da principal se movera para a direita da página */
+    flex-wrap: wrap;  /*para gerar uma quebra automatic de linha */
+    justify-content: center; /* Alinhamento na horizontal */
+    align-items: center; /* Alinhamento na vertical */
+    width: 100%;
+    
+}
+
+/* imagem de dentro da class jogo que ta dentro da class box */
+.box .jogo img {
+    width: 50%;
+}
+
+/* classe jogo dentro dentro da class box */
+.box .jogo{
+    border: 1px solid black;
+    width: 170px;
+}
