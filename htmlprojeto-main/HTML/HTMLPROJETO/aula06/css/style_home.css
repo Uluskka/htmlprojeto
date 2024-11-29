@@ -1,0 +1,457 @@
+/* Importa a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap');
+
+/* Inicio estilo header */
+
+/* Remove a margem e o padding padrão do body e de listas não ordenadas (ul) */
+body, ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estiliza os links dentro do menu (#menu a) */
+#menu a {
+    color: black; /* Define a cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-family: "Abel", sans-serif; /* Aplica a fonte Abel */
+    font-weight: 400; /* Peso da fonte */
+    font-style: normal; /* Estilo da fonte */
+    transition: 0.3s; /* Adiciona transição suave ao hover */
+    text-align: center; /* Centraliza o texto */
+    padding: 0 0.4em; /* Espaçamento horizontal interno */
+    font-size: 16px; /* Tamanho do texto */
+    border-bottom-left-radius: 15px; /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 15px; /* Arredonda o canto inferior direito */
+    border-bottom: 4px solid #cccc; /* Define a borda inferior */
+    box-shadow: 2px 2px 4px #969696; /* Sombra ao redor do link */
+}
+
+/* Estiliza o hover (passar o mouse por cima) dos links do menu */
+#menu a:hover{
+    font-size: 22px; /* Aumenta o tamanho do texto ao passar o mouse */
+    border-bottom-left-radius: 15px; /*Arredondar canto abaixo e esquerda */
+    border-bottom-right-radius: 15px; /*Arredondar canto abaixo e direito */
+    border-bottom: 0.1px solid #00000000; /* Remove a borda inferior ao passar o mouse */
+}
+
+/* Estiliza o logo */
+#logo img{
+    height: 70px; /* Altura da imagem do logo */
+    width: 70px; /* Largura da imagem do logo */
+}
+
+/* Estiliza o hover do logo */
+#logo img:hover{
+    box-shadow: 2px 2px 4px #cbcbcb; /* Sombra ao redor da imagem ao passar o mouse */
+    transition: 0.3s; /* Transição suave ao aplicar hover */
+}
+
+/* Estiliza o header */
+#header{
+    box-sizing: border-box; /* Garante que padding e border são incluídos na largura e altura totais */
+    height: 90px; /* Altura do header */
+    padding: 1rem; /* Padding interno do header */
+    display: flex; /* Exibe o conteúdo do header como flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* Distribui o conteúdo com espaçamento entre os elementos */
+    background: #e7e7e7; /* Cor de fundo do header */
+    box-shadow: 3px 3px 6px #b1b1b1; /* Sombra ao redor do header */
+    top: 0px;
+    
+}
+
+/* Estiliza o menu de navegação */
+#menu{
+    display: flex; /* Exibe o menu como flexbox */
+    list-style: none; /* Remove os marcadores de lista */
+    gap: 0.8rem; /* Define o espaçamento entre os itens do menu */
+    /* rem - unidade de medida relativa que varia de acordo com a dimensão do navegador */
+    z-index: 1000;
+}
+
+/* Esconde o botão móvel por padrão */
+#btn-mobile{
+    display: none;
+}
+
+#carouselExampleInterval {
+    width: 500px;
+    height: auto; 
+    display: flex;
+    position: relative;
+    z-index: 100; /* garante que o carrousel esteja acima de outros elementos utilizando um número menor que o nosso #menu ficará atrás do menu   */
+    margin: 30px 0px 0px 30px;
+}
+
+.carousel-item {
+    max-height: 100%;
+    width: 50%;
+}
+
+.countainer {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#carouselExampleInterval {
+    width: 500px;
+    height: auto;
+    display: flex;
+    position: relative;
+    z-index: 100;
+    /* garante que o carrousel esteja acima de outros elementos utilizando um número menor que o nosso #menu ficará atrás do menu   */
+    margin: 30px 0px 0px 30px;
+}
+
+.carousel-item img {
+    max-height: 100%;
+    width: 50%;
+}
+
+@media (max-width: 600px) {
+    #menu {
+        display: block;
+        position: absolute;
+        width: 15em;
+        top: 70px;
+        right: 0px;
+        background: #e7e7e7;
+        transition: 0.6s;
+        z-index: 500;
+        height: 0px;
+        padding-left: 5px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #menu li {
+        padding-top: 30px;
+        padding-bottom: 12px;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: hidden;
+    }
+
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+
+    #hamburger {
+        border-top: 2px solid;
+        /* melhorando o hamburger > espessura da linha*/
+        width: 3opx;
+        /* altera a largura do menu */
+        color: #003f91;
+        /* altera a cor do hamburger */
+    }
+
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        display: block;
+        width: 30px;
+        /* altera a largura do icone */
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 4px;
+        /* alterar o espaçamento entre o hamburger*/
+        position: relative;
+        border-top: 2px solid;
+        /* melhorando o hamburger > espessura da linha */
+    }
+
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+/* CSS Estilos Banner */
+.section-banner-home {
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    background-color: #5d5d5d;
+    display: ruby-base-container;
+}
+
+.section-banner-home img {
+    padding: 20px;
+    max-height: 400px;
+    width: 100%;
+    /* Verificar responsivo */
+}
+
+.section-banner-home .texto-banner {
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+.section-banner-home .texto-banner h1 {
+    font-size: 30px;
+    width: 60%;
+    font-weight: 500;
+    padding-bottom: 20px;
+    color: white;
+}
+
+.section-banner-home .texto-banner p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.section-banner-home .texto-banner a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: #424242;
+    padding: 4px 24px;
+    font-size: 15px;
+}
+
+/* Fim css estilos Banner */
+/* Início css destaque */
+.destaque h2 {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.destaque p {
+    width: 77%;
+    text-align: center;
+    font-size: 14px;
+    margin: 30px auto;
+}
+
+.destaque figcaption {
+    font-size: 13px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.destaque a {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+.destaque a:hover {
+    color: #ff0000;
+    font-size: 24px;
+    transition: 0.3s;
+    text-shadow: 4px 4px 6px #0000007a;
+}
+
+.destaque img {
+    height: 220px;
+}
+
+/* Fim CSS Destaque */
+/* Início CSS Novidades */
+.novidades .text-body {
+    width: 80%;
+    margin: 70px auto;
+}
+
+.novidades h2 {
+    color: #000;
+}
+
+.novidades p {
+    color: rgb(0, 0, 0);
+}
+
+.novidades a {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    text-decoration-color: violet;
+    padding: 6px 12px;
+    background-color: rgb(0, 68, 194);
+    font-weight: 400;
+}
+
+/* Fim CSS Novidades */
+/* Início CSS Galeria */
+.galeria {
+    margin: 60px auto 20px;
+    /* Quando tivermos 4 valores no margin = top / right / botton / left > Ex:
+    margin: 60px 60px 60px 60px;
+    Quando tivermos 3 valores = top / right and left / botton
+    > Ex: margin: 60px auto 60px;
+    Quanto tivermos 2 valores = top and botton / right and left
+    > Ex: margin: 60px 30px;
+    Quando tivermos 1 valor = top and botton and right and left
+    > Ex: margin: 60px;
+    >> Essa regra vale também para padding. <<
+    */
+}
+
+.galeria .container {
+    margin-left: 11%;
+}
+
+.galeria h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.galeria p {
+    text-align: center;
+    width: 50%;
+    margin: 14px auto 50px;
+}
+
+.galeria .gallery {
+    width: 30%;
+    margin: 14px auto 50px;
+}
+
+.galeria .gallery img {
+    width: 80%;
+    height: 80%;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    display: block;
+}
+
+.galeria .gallery img:hover {
+    -webkit-transform: scale(1.9);
+    transform: scale(1.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Fim CSS Galeria */
+/* Início CSS Footer */
+.rodape {
+    padding: 50px 50px 0;
+}
+
+.rodape .container #img-logo {
+    height: 50%;
+    width: 50%;
+    padding-left: 10px;
+    transition: transform .3s;
+    display: block;
+}
+
+.rodape .container #img-logo:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.rodape .info-contato p {
+    margin: 0;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+}
+
+.rodape a:hover {
+    font-weight: bold;
+}
+
+.rodape .redes-sociais {
+    display: inline-block;
+}
+
+.rodape .redes-sociais img {
+    width: 50px;
+    height: 50px;
+    padding-left: 0;
+    margin-left: 0.7rem;
+    transition: transform .3s;
+    border-radius: 15px;
+    /* Arredondando div do obejto redes sociais */
+}
+
+.rodape .redes-sociais img:hover {
+    z-index: 1;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.446);
+}
+
+.rodape p.direitos {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Fim CSS Footer . */
+/* Início Whatsapp */
+.whatsapp {
+    position: fixed;
+    z-index: 200;
+    top: 400px;
+    right: 20px;
+}
+
+.whatsapp img {
+    height: 60px;
+}
+
+/* Efeito Pulse */
+.whatsapp .pulse {
+    animation: pulse 0.7s infinite;
+    margin: 0 auto;
+    display: table;
+    margin-top: 50px;
+    animation-direction: alternate;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        -webkit-filter: brightness(100%);
+    }
+
+    100% {
+        -webkit-transform: scale(1.1);
+        -webkit-filter: brightness(110%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(100%);
+    }
+
+    100% {
+        transform: scale(1.1);
+        filter: brightness(110%);
+    }
+}
+
+/* Fim Efeito Pulse */
+/* Fim Whatsapp */
